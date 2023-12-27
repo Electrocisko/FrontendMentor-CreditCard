@@ -1,12 +1,12 @@
 import Form from "./components/form/Form";
+import Front from "./components/front/Front";
 
 function App() {
   return (
- <div>
-     <Form />
- </div>
-   
-  
+    <div>
+      <Front />
+      <Form />
+    </div>
   );
 }
 
