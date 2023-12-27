@@ -2,9 +2,48 @@
 .cardForm{
    display: flex;
    flex-direction: column;
+   width: 340px;
+   margin: 25px;
+
+   label {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: var(--color-very-dark-violet);
+   }
+
+   button {
+    background-color: var(--color-very-dark-violet);
+    padding: 15px;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+   }
 }
 
 .cardData{
     display: flex;
     flex-direction: column;
+
+    .group {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 10px;
+
+        input {
+            width: 100%;
+        }
+    }
 }
+
+input {
+    margin-bottom: 20px;
+    padding: 12px;
+    border: solid 1px;
+    border-radius: 5px;
+    border-color: var(--color-light-grayish-violet);
+    cursor: pointer;
+   }
+

@@ -1,9 +1,6 @@
 
 import styles from "./form.module.scss"
 
-
-
-
 function Form() {
   return (
     <form className={styles.cardForm}>
@@ -28,7 +25,7 @@ function Form() {
         <label htmlFor="month">Exp. Date (MM/YY)</label>
         <label htmlFor="cvc">CVC</label>
         </div>
-        <div>
+        <div className={styles.group}>
         <input type="number" name="month" id="month" placeholder="MM" />
         <input type="number" name="year" id="year" placeholder="YY" />
         <input type="number" name="cvc" id="cvc" placeholder=" e.g. 123" />
