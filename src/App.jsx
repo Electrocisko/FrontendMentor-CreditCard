@@ -1,8 +1,11 @@
+import Form from "./components/form/Form";
 
 function App() {
   return (
-    <div>App</div>
-  )
+    <>
+      <Form />
+    </>
+  );
 }
 
-export default App
+export default App;
