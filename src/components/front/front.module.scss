@@ -1,5 +1,4 @@
-
-.frontContainer{
+.frontContainer {
     background-image: url('./src/images/bg-card-front.png');
     background-size: contain;
     color: white;
@@ -23,9 +22,14 @@
     }
 }
 
-.textContainer{
+.textContainer {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: 20px;
+    padding: 0px 20px 20px 20px;
+}
+
+.icon {
+    margin-left: 20px;
+    margin-bottom: 40px;
 }

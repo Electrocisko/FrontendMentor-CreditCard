@@ -4,7 +4,8 @@ import styles from "./front.module.scss"
 function Front() {
   return (
     <div className={styles.frontContainer}>
-   
+
+        <img className={styles.icon} src="./src/images/card-logo.svg" alt="icono" height={'30px'} width={'60px'} />
         <h2>0000 0000 0000 0000</h2>
        
      
