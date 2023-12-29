@@ -1,22 +1,32 @@
-import styles from "./front.module.scss"
+/* eslint-disable react/prop-types */
+import styles from "./front.module.scss";
+
+function Front({ dataCard }) {
+  let result;
 
 
-function Front() {
+  if (dataCard.number) {
+    const numero = dataCard.number;
+    result = numero.match(/.{1,4}/g).join(" "); // This add a space each 4 charaters
+  }
+
   return (
     <div className={styles.frontContainer}>
+      <img
+        className={styles.icon}
+        src="./src/images/card-logo.svg"
+        alt="icono"
+        height={"30px"}
+        width={"60px"}
+      />
+      <h2> {dataCard.number ? result : "0000 0000 0000 0000"}</h2>
 
-        <img className={styles.icon} src="./src/images/card-logo.svg" alt="icono" height={'30px'} width={'60px'} />
-        <h2>0000 0000 0000 0000</h2>
-       
-     
-        <div className={styles.textContainer}>
-        <p>Jane Appleseed</p>
-        <p>00/00</p>
-        </div>
-       
-        
-        </div>
-  )
+      <div className={styles.textContainer}>
+        <p>{dataCard.name ? dataCard.name : "Jane Appleseed"}</p>
+        <p>{(dataCard.month && dataCard.year) ? `${dataCard.month}/${dataCard.year}`: "00/00"} </p>
+      </div>
+    </div>
+  );
 }
 
-export default Front
+export default Front;
