@@ -1,6 +1,5 @@
-/* eslint-disable react/prop-types */
-
 import styles from "./form.module.scss";
+import PropTypes from "prop-types";
 
 function Form({handleChange, dataCard}) {
   return (
@@ -61,5 +60,12 @@ function Form({handleChange, dataCard}) {
     </form>
   );
 }
+
+
+Form.propTypes = {
+  handleChange: PropTypes.func,
+  dataCard: PropTypes.object
+  }
+
 
 export default Form;

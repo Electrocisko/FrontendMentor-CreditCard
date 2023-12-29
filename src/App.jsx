@@ -14,14 +14,13 @@ function App() {
   });
 
   function handleChange(e) {
-    console.log(e.target.name, e.target.value);
     setDataCard({ ...dataCard, [e.target.name]: e.target.value });
   }
 
 
   return (
     <div>
-      <Back/>
+      <Back cvc={dataCard.cvc}/>
       <Front dataCard={dataCard} />
       <Form handleChange={handleChange} dataCard={dataCard}  />
     </div>

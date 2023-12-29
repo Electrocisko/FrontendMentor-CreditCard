@@ -1,5 +1,5 @@
-/* eslint-disable react/prop-types */
 import styles from "./front.module.scss";
+import PropTypes from "prop-types";
 
 function Front({ dataCard }) {
   let result;
@@ -28,5 +28,12 @@ function Front({ dataCard }) {
     </div>
   );
 }
+
+Front.propTypes = {
+  dataCard: PropTypes.object
+  }
+
+
+
 
 export default Front;
