@@ -1,6 +1,8 @@
 import Form from "./components/form/Form";
 import Front from "./components/front/Front";
 import Back from "./components/back/Back";
+import Thanks from "./components/thanks/Thanks";
+
 import { useState } from "react";
 
 function App() {
@@ -20,9 +22,10 @@ function App() {
 
   return (
     <div>
-      <Back cvc={dataCard.cvc}/>
+      {/* <Back cvc={dataCard.cvc}/>
       <Front dataCard={dataCard} />
-      <Form handleChange={handleChange} dataCard={dataCard}  />
+      <Form handleChange={handleChange} dataCard={dataCard}  /> */}
+      <Thanks/>
     </div>
   );
 }

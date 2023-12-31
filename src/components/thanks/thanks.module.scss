@@ -1,0 +1,31 @@
+.thanksContainer{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 340px;
+
+    p {
+        color: var(--color-dark-grayish-violet);
+        margin-bottom: 40px;
+    }
+
+    button {
+        background-color: var(--color-very-dark-violet);
+        margin-top: 15px;
+        padding: 15px;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+       }
+}
+
+
+
+.title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 40px 0px;
+    font-weight: lighter;
+    color: var(--color-very-dark-violet);
+}

@@ -3,11 +3,11 @@ import styles from "./form.module.scss";
 import PropTypes from "prop-types";
 
 function Form({ handleChange, dataCard }) {
+
   const [submited, setSubmited] = useState(false);
 
   function validateData(e) {
     e.preventDefault();
-    console.log(dataCard);
     setSubmited(true);
   }
 
