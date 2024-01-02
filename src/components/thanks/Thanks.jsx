@@ -7,7 +7,7 @@ function Thanks() {
       
        <h2 className={styles.title}>Thank you!</h2>
        <p>We&apos;ve added your card details</p>
-       <button>Continue</button>
+       <button onClick={() => window.location.reload()}>Continue</button>
     </div>
   )
 }

@@ -1,15 +1,8 @@
-import { useState } from "react";
+
 import styles from "./form.module.scss";
 import PropTypes from "prop-types";
 
-function Form({ handleChange, dataCard }) {
-
-  const [submited, setSubmited] = useState(false);
-
-  function validateData(e) {
-    e.preventDefault();
-    setSubmited(true);
-  }
+function Form({ handleChange, dataCard, submited, validateData }) {
 
   return (
     <form className={styles.cardForm}>
@@ -94,6 +87,8 @@ function Form({ handleChange, dataCard }) {
 Form.propTypes = {
   handleChange: PropTypes.func,
   dataCard: PropTypes.object,
+  submited: PropTypes.bool,
+  validateData: PropTypes.func
 };
 
 export default Form;
