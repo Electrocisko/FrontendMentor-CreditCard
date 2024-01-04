@@ -61,15 +61,6 @@ function App() {
     month.length == 0 &&
       setMessages((prevState) => ({ ...prevState, month: "Can't be blank" }));
 
-    year.length != 2 &&
-      year.length > 0 &&
-      setMessages((prevState) => ({
-        ...prevState,
-        year: "must have 2 numeric characters",
-      }));
-    year.length == 0 &&
-      setMessages((prevState) => ({ ...prevState, year: "Can't be blank" }));
-
     cvc.length != 3 &&
       cvc.length > 0 &&
       setMessages((prevState) => ({
@@ -79,9 +70,24 @@ function App() {
     cvc.length == 0 &&
       setMessages((prevState) => ({ ...prevState, cvc: "Can't be blank" }));
 
-      
+      let cardDate = new Date(parseInt(year)+2000,month-1 );
+      let currentDate = new Date();
+      if (cardDate.getFullYear() < currentDate.getFullYear()) {
+        setMessages((prevState) => ({ ...prevState, year: "Card Expired" }));
+      }
 
+      if ((cardDate.getFullYear() == currentDate.getFullYear()) && cardDate.getMonth() < currentDate.getMonth()  ) {
+        setMessages((prevState) => ({ ...prevState, year: "Card Expired" }));
+      }
 
+      year.length != 2 &&
+      year.length > 0 &&
+      setMessages((prevState) => ({
+        ...prevState,
+        year: "must have 2 numeric characters",
+      }));
+    year.length == 0 &&
+      setMessages((prevState) => ({ ...prevState, year: "Can't be blank" }));
 
 
     setSubmited(true);
