@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 
 import styles from "./form.module.scss";
 import PropTypes from "prop-types";
 
-function Form({ handleChange, dataCard, submited, validateData }) {
+function Form({ handleChange, dataCard, validateData,messages}) {
 
   return (
     <form className={styles.cardForm}>
@@ -15,11 +16,9 @@ function Form({ handleChange, dataCard, submited, validateData }) {
         onChange={handleChange}
         value={dataCard.name}
       />
-      {!dataCard.name && submited && (
-        <p className={styles.errorBlank}>Can&apos;t be blank</p>
-      )}
+    <p className={styles.errorBlank}>{messages.name}</p>
 
-      <label htmlFor="number">Card Number</label>
+     <label htmlFor="number">Card Number</label>
       <input
         type="number"
         name="number"
@@ -28,11 +27,10 @@ function Form({ handleChange, dataCard, submited, validateData }) {
         onChange={handleChange}
         value={dataCard.number}
       />
-      {!dataCard.number && submited && (
-        <p className={styles.errorBlank}>Can&apos;t be blank</p>
-      )}
 
-      <div className={styles.cardData}>
+<p className={styles.errorBlank}>{messages.number}</p>
+
+     <div className={styles.cardData}>
         <div>
           <label htmlFor="month">Exp. Date (MM/YY)</label>
           <label htmlFor="cvc">CVC</label>
@@ -47,9 +45,8 @@ function Form({ handleChange, dataCard, submited, validateData }) {
               onChange={handleChange}
               value={dataCard.month}
             />
-            {!dataCard.month && submited && (
-              <p className={styles.errorBlank}>Can&apos;t be blank</p>
-            )}
+            <p className={styles.errorBlank}>{messages.month}</p>
+
           </div>
           <div>
             <input
@@ -60,9 +57,8 @@ function Form({ handleChange, dataCard, submited, validateData }) {
               onChange={handleChange}
               value={dataCard.year}
             />
-            {!dataCard.year && submited && (
-              <p className={styles.errorBlank}>Can&apos;t be blank</p>
-            )}
+            <p className={styles.errorBlank}>{messages.year}</p>
+
           </div>
           <div>
             <input
@@ -73,9 +69,8 @@ function Form({ handleChange, dataCard, submited, validateData }) {
               onChange={handleChange}
               value={dataCard.cvc}
             />
-            {!dataCard.cvc && submited && (
-              <p className={styles.errorBlank}>Can&apos;t be blank</p>
-            )}
+            <p className={styles.errorBlank}>{messages.cvc}</p>
+
           </div>
         </div>
       </div>
