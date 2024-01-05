@@ -120,19 +120,30 @@ function App() {
 
   return (
     <div>
-      <Back cvc={dataCard.cvc} />
-      <Front dataCard={dataCard} />
       <div className={styles.container}>
+        <div className={styles.cardImage}>
+          <div className={styles.backCard}>
+            <Back cvc={dataCard.cvc} />
+          </div>
+          <div className={styles.frontCard}>
+            <Front dataCard={dataCard} />
+          </div>
+        </div>
+
         {submited && itsOk ? (
-          <Thanks />
+          <div className={styles.thanks}>
+            <Thanks />
+          </div>
         ) : (
-          <Form
-            handleChange={handleChange}
-            dataCard={dataCard}
-            submited={submited}
-            validateData={validateData}
-            messages={messages}
-          />
+          <div className={styles.form}>
+            <Form
+              handleChange={handleChange}
+              dataCard={dataCard}
+              submited={submited}
+              validateData={validateData}
+              messages={messages}
+            />
+          </div>
         )}
       </div>
     </div>
