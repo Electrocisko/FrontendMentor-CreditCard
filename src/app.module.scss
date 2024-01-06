@@ -1,13 +1,13 @@
-.container {
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-}
+   .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
 
-.cardImage{
+.cardImages{
    background-color: var(--color-very-dark-violet);
-   width: 100%;
+   width: 375px;
    height: 260px;
    position: relative;
 }

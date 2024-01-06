@@ -121,7 +121,7 @@ function App() {
   return (
     <div>
       <div className={styles.container}>
-        <div className={styles.cardImage}>
+        <div className={styles.cardImages}>
           <div className={styles.backCard}>
             <Back cvc={dataCard.cvc} />
           </div>
