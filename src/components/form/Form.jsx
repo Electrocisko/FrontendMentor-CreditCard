@@ -20,7 +20,7 @@ function Form({ handleChange, dataCard, validateData,messages}) {
 
      <label htmlFor="number">Card Number</label>
       <input
-        type="number"
+        type="text"
         name="number"
         id="number"
         placeholder="e.g. 1234 5678 9123 0000"

@@ -2,13 +2,6 @@ import styles from "./front.module.scss";
 import PropTypes from "prop-types";
 
 function Front({ dataCard }) {
-  let result;
-
-
-  if (dataCard.number) {
-    const numero = dataCard.number;
-    result = numero.match(/.{1,4}/g).join(" "); // This add a space each 4 charaters
-  }
 
   return (
     <div className={styles.frontContainer}>
@@ -19,7 +12,7 @@ function Front({ dataCard }) {
         height={"30px"}
         width={"60px"}
       />
-      <h2> {dataCard.number ? result : "0000 0000 0000 0000"}</h2>
+      <h2> {dataCard.number ? dataCard.number : "0000 0000 0000 0000"}</h2>
 
       <div className={styles.textContainer}>
         <p>{dataCard.name ? dataCard.name : "Jane Appleseed"}</p>

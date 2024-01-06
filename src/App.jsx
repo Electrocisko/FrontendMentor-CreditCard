@@ -16,7 +16,21 @@ function App() {
   });
 
   function handleChange(e) {
-    setDataCard({ ...dataCard, [e.target.name]: e.target.value });
+
+    if (e.target.name == "number") {
+      console.log("number");
+      let result;
+      const numero = (e.target.value).replace(/ /g, "")
+      
+      console.log(numero);
+    
+      result = numero.match(/.{1,4}/g).join(" "); // This add a space each 4 charaters
+  
+
+      setDataCard({ ...dataCard, [e.target.name]: result });
+    } else {
+      setDataCard({ ...dataCard, [e.target.name]: e.target.value });
+    }
   }
 
   const [submited, setSubmited] = useState(false);
@@ -137,15 +151,14 @@ function App() {
         ) : (
           <div className={styles.form}>
             <div>
-            <Form
-              handleChange={handleChange}
-              dataCard={dataCard}
-              submited={submited}
-              validateData={validateData}
-              messages={messages}
-            />
+              <Form
+                handleChange={handleChange}
+                dataCard={dataCard}
+                submited={submited}
+                validateData={validateData}
+                messages={messages}
+              />
             </div>
-      
           </div>
         )}
       </div>
