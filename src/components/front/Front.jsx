@@ -14,7 +14,7 @@ function Front({ dataCard }) {
     <div className={styles.frontContainer}>
       <img
         className={styles.icon}
-        src="./src/images/card-logo.svg"
+        src="./images/card-logo.svg"
         alt="icono"
         height={"30px"}
         width={"60px"}
