@@ -5,31 +5,61 @@
       align-items: center;
    }
 
-.cardImages{
-   background-color: var(--color-very-dark-violet);
-   width: 375px;
-   height: 260px;
-   position: relative;
-}
+   .cardImages {
+      background-color: var(--color-very-dark-violet);
+      width: 375px;
+      height: 260px;
+      position: relative;
+   }
 
-.backCard{
-   position: relative;
-   left: 30px;
-   top: 20px;
-}
+   .backCard {
+      position: relative;
+      left: 30px;
+      top: 20px;
+   }
 
-.frontCard{
-   position: relative;
-   top: -40px;
-   left: 10px;
-}
+   .frontCard {
+      position: relative;
+      top: -40px;
+      left: 10px;
+   }
 
-.form {
-  position: relative;
-  top: 100px;
-}
+   .form {
+      position: relative;
+      top: 100px;
+   }
 
-.thanks{
-   position: relative;
-   top: 100px;
-}
+   .thanks {
+      position: relative;
+      top: 100px;
+   }
+
+   /* -----Desktop Design ----- */
+
+   @media (min-width: 431px) {
+
+      .container {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+      }
+
+      .cardImages {
+         width: 30%;
+         height: 100vh;
+         position: relative;
+      }
+
+      .form {
+         width: 70%;
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+         top: 0px;
+      }
+
+
+
+
+   }

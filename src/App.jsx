@@ -136,6 +136,7 @@ function App() {
           </div>
         ) : (
           <div className={styles.form}>
+            <div>
             <Form
               handleChange={handleChange}
               dataCard={dataCard}
@@ -143,6 +144,8 @@ function App() {
               validateData={validateData}
               messages={messages}
             />
+            </div>
+      
           </div>
         )}
       </div>
