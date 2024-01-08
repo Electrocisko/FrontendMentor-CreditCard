@@ -18,15 +18,11 @@ function App() {
   function handleChange(e) {
 
     if (e.target.name == "number") {
-      console.log("number");
-      let result;
-      const numero = (e.target.value).replace(/ /g, "")
-      
-      console.log(numero);
-    
-      result = numero.match(/.{1,4}/g).join(" "); // This add a space each 4 charaters
-  
-
+      const numero = (e.target.value).replace(/ /g, "") // clean the spaces
+      let result="";
+      if (numero.length > 0) {
+        result = numero.match(/.{1,4}/g).join(" "); // This add a space each 4 charaters
+      }
       setDataCard({ ...dataCard, [e.target.name]: result });
     } else {
       setDataCard({ ...dataCard, [e.target.name]: e.target.value });
@@ -45,12 +41,7 @@ function App() {
 
   function validateData(e) {
     e.preventDefault();
-    let nameOk = false;
-    let numberOk = false;
-    let monthOk = false;
-    let yearOk = false;
-    let cvcOk = false;
-    let expiredOk = false;
+    let nameOk = false, numberOk = false, monthOk = false, yearOk = false, cvcOk = false, expiredOk = false;
 
     const { name, number, month, year, cvc } = dataCard;
     setMessages({
@@ -63,20 +54,28 @@ function App() {
     setItsOk(false);
     setSubmited(false);
 
+    const regex = /^[0-9]*$/;
+    const aux = (dataCard.number).replace(/ /g, ""); // clean the spaces
+ 
     if (name == "") {
       setMessages((prevState) => ({ ...prevState, name: "Can't be blank" }));
     } else {
       nameOk = true;
     }
 
-    if (number.length != 16 && number != "") {
+    if (number.length != 19 && number != "") {
       setMessages((prevState) => ({
         ...prevState,
         number: "Must have 16 numeric characters",
       }));
     } else if (number == "") {
       setMessages((prevState) => ({ ...prevState, number: "Can't be blank" }));
-    } else {
+    } 
+    else if (!regex.test(aux)) {
+      setMessages((prevState) => ({ ...prevState, number: "Wrong format, numbers only " }));
+      numberOk = false;
+    } 
+    else {
       numberOk = true;
     }
 
@@ -87,6 +86,9 @@ function App() {
       }));
     } else if (month == "") {
       setMessages((prevState) => ({ ...prevState, month: "Can't be blank" }));
+    } else  if (month > 12 || month < 1) {
+      setMessages((prevState) => ({ ...prevState, month: "Month Invalid" }));
+      monthOk = false;
     } else {
       monthOk = true;
     }
